@@ -76,7 +76,7 @@ export default function App() {
             <Route path="/ladder" element={<Ladder />} />
             <Route path="/players" element={<Players />} />
             <Route path="/tournaments" element={<Tournaments />} />
-            <Route path="/admin" element={<Admin />} />
+{/*            <Route path="/admin" element={<Admin />} />*/}
             <Route path="/players/:username" element={<PlayerProfile />} />
           </Routes>
         </main>
