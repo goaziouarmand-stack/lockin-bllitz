@@ -210,28 +210,6 @@ export default function Tournaments() {
               </div>
 
 {/* MATCHES */}
-<div className="space-y-10">
-
-  {rounds.map((round) => (
-
-    <div key={round.title}>
-
-      {/* ROUND TITLE */}
-      <div className="mb-5">
-
-        <h2
-          className="
-            text-2xl
-            font-bold
-            text-cyan-300
-          "
-        >
-          {round.title}
-        </h2>
-
-      </div>
-
-      {/* MATCHES */}
 {/* TOURNAMENT TABLE */}
 <div
   className="
