@@ -232,248 +232,249 @@ export default function Tournaments() {
       </div>
 
       {/* MATCHES */}
-      <div className="space-y-4">
+{/* TOURNAMENT TABLE */}
+<div
+  className="
+    overflow-x-auto
 
-        {round.matches.map((match) => (
+    rounded-3xl
+    border
+    border-cyan-400/10
 
-          <motion.div
-            key={match.id}
-            whileHover={{
-              scale: 1.01,
-            }}
-            className="
-              relative
-              overflow-hidden
+    bg-[#0b1120]/80
+    backdrop-blur-xl
+  "
+>
 
-              rounded-3xl
+  <table
+    className="
+      w-full
+      min-w-[900px]
 
-              border
-              border-cyan-400/10
+      border-collapse
+      text-left
+    "
+  >
 
-              bg-gradient-to-br
-              from-[#151d35]
-              to-[#0b1120]
+    {/* HEADER */}
+    <thead>
 
-              p-5
+      <tr
+        className="
+          border-b
+          border-cyan-400/10
 
-              shadow-2xl
-            "
-          >
+          bg-cyan-500/5
+        "
+      >
 
-            {/* Glow */}
+        <th className="p-5 text-cyan-300">
+          ROUND
+        </th>
+
+        <th className="p-5 text-cyan-300">
+          PLAYER 1
+        </th>
+
+        <th className="p-5 text-cyan-300">
+          SCORE
+        </th>
+
+        <th className="p-5 text-cyan-300">
+          PLAYER 2
+        </th>
+
+        <th className="p-5 text-cyan-300">
+          WINNER
+        </th>
+
+        <th className="p-5 text-cyan-300">
+          STATUS
+        </th>
+
+      </tr>
+
+    </thead>
+
+    {/* BODY */}
+    <tbody>
+
+      {matches.map((match, index) => (
+
+        <motion.tr
+          key={match.id}
+
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+
+          transition={{
+            delay: index * 0.03,
+          }}
+
+          className="
+            border-b
+            border-white/5
+
+            hover:bg-cyan-500/5
+
+            transition-all
+          "
+        >
+
+          {/* ROUND */}
+          <td className="p-5">
+
             <div
               className="
-                absolute
-                inset-0
+                inline-flex
 
-                bg-gradient-to-r
-                from-cyan-500/5
-                to-purple-500/5
+                px-3
+                py-1
+
+                rounded-full
+
+                bg-purple-500/10
+                border
+                border-purple-500/20
+
+                text-purple-300
+                text-sm
+                font-bold
               "
-            />
+            >
+              {match.round}
+            </div>
 
-            <div className="relative z-10">
+          </td>
 
-              {/* TOP */}
+          {/* PLAYER 1 */}
+          <td className="p-5">
+
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+              "
+            >
+
               <div
                 className="
-                  flex
-                  items-center
-                  justify-between
+                  w-3
+                  h-3
 
-                  mb-4
+                  rounded-full
+                  bg-cyan-400
                 "
-              >
+              />
 
-                <div
-                  className="
-                    text-white/40
-                    text-sm
-                    uppercase
-                    tracking-widest
-                  "
-                >
-                  BO3 MATCH
-                </div>
-
-                <div
-                  className="
-                    px-3
-                    py-1
-
-                    rounded-full
-
-                    bg-cyan-400/10
-                    border
-                    border-cyan-400/20
-
-                    text-cyan-300
-                    text-xs
-                    font-bold
-                  "
-                >
-                  LIVE
-                </div>
-
-              </div>
-
-              {/* PLAYERS */}
-              <div className="space-y-3">
-
-                {/* PLAYER 1 */}
-                <div
-                  className="
-                    flex
-                    items-center
-                    justify-between
-
-                    rounded-2xl
-
-                    bg-black/20
-
-                    px-5
-                    py-4
-                  "
-                >
-
-                  <div
-                    className="
-                      flex
-                      items-center
-                      gap-4
-                    "
-                  >
-
-                    <div
-                      className="
-                        w-3
-                        h-3
-
-                        rounded-full
-                        bg-cyan-400
-                      "
-                    />
-
-                    <span
-                      className="
-                        text-lg
-                        font-semibold
-                      "
-                    >
-                      {match.player1}
-                    </span>
-
-                  </div>
-
-                  <div
-                    className="
-                      text-2xl
-                      font-black
-                      text-cyan-300
-                    "
-                  >
-                    {match.score1}
-                  </div>
-
-                </div>
-
-                {/* PLAYER 2 */}
-                <div
-                  className="
-                    flex
-                    items-center
-                    justify-between
-
-                    rounded-2xl
-
-                    bg-black/20
-
-                    px-5
-                    py-4
-                  "
-                >
-
-                  <div
-                    className="
-                      flex
-                      items-center
-                      gap-4
-                    "
-                  >
-
-                    <div
-                      className="
-                        w-3
-                        h-3
-
-                        rounded-full
-                        bg-purple-400
-                      "
-                    />
-
-                    <span
-                      className="
-                        text-lg
-                        font-semibold
-                      "
-                    >
-                      {match.player2}
-                    </span>
-
-                  </div>
-
-                  <div
-                    className="
-                      text-2xl
-                      font-black
-                      text-purple-300
-                    "
-                  >
-                    {match.score2}
-                  </div>
-
-                </div>
-
-              </div>
-
-              {/* FOOTER */}
-              <div
-                className="
-                  mt-4
-                  pt-4
-
-                  border-t
-                  border-white/5
-
-                  flex
-                  items-center
-                  justify-between
-                "
-              >
-
-                <div className="text-white/40 text-sm">
-                  Winner:
-                  {' '}
-                  <span className="text-cyan-300">
-                    {match.winner || 'TBD'}
-                  </span>
-                </div>
-
-                <div className="text-white/30 text-sm">
-                  Monthly Cup
-                </div>
-
-              </div>
+              <span className="font-semibold">
+                {match.player1}
+              </span>
 
             </div>
 
-          </motion.div>
-        ))}
+          </td>
 
-      </div>
+          {/* SCORE */}
+          <td className="p-5">
 
-    </div>
-  ))}
+            <div
+              className="
+                text-xl
+                font-black
+                text-cyan-300
+              "
+            >
+              {match.score1}
+              {' - '}
+              {match.score2}
+            </div>
+
+          </td>
+
+          {/* PLAYER 2 */}
+          <td className="p-5">
+
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+              "
+            >
+
+              <div
+                className="
+                  w-3
+                  h-3
+
+                  rounded-full
+                  bg-purple-400
+                "
+              />
+
+              <span className="font-semibold">
+                {match.player2}
+              </span>
+
+            </div>
+
+          </td>
+
+          {/* WINNER */}
+          <td className="p-5">
+
+            <span
+              className="
+                text-green-400
+                font-bold
+              "
+            >
+              {match.winner || 'TBD'}
+            </span>
+
+          </td>
+
+          {/* STATUS */}
+          <td className="p-5">
+
+            <div
+              className="
+                inline-flex
+
+                px-3
+                py-1
+
+                rounded-full
+
+                bg-cyan-400/10
+                border
+                border-cyan-400/20
+
+                text-cyan-300
+                text-xs
+                font-bold
+              "
+            >
+              LIVE
+            </div>
+
+          </td>
+
+        </motion.tr>
+      ))}
+
+    </tbody>
+
+  </table>
 
 </div>
 
