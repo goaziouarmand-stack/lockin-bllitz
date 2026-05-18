@@ -209,108 +209,273 @@ export default function Tournaments() {
                 {round.title}
               </div>
 
-              {/* MATCHES */}
-              <div className="space-y-8">
+{/* MATCHES */}
+<div className="space-y-10">
 
-                {round.matches.map(
-                  (match, index) => (
+  {rounds.map((round) => (
 
-                  <motion.div
-                    key={index}
-                    whileHover={{
-                      scale: 1.03,
-                    }}
+    <div key={round.title}>
+
+      {/* ROUND TITLE */}
+      <div className="mb-5">
+
+        <h2
+          className="
+            text-2xl
+            font-bold
+            text-cyan-300
+          "
+        >
+          {round.title}
+        </h2>
+
+      </div>
+
+      {/* MATCHES */}
+      <div className="space-y-4">
+
+        {round.matches.map((match) => (
+
+          <motion.div
+            key={match.id}
+            whileHover={{
+              scale: 1.01,
+            }}
+            className="
+              relative
+              overflow-hidden
+
+              rounded-3xl
+
+              border
+              border-cyan-400/10
+
+              bg-gradient-to-br
+              from-[#151d35]
+              to-[#0b1120]
+
+              p-5
+
+              shadow-2xl
+            "
+          >
+
+            {/* Glow */}
+            <div
+              className="
+                absolute
+                inset-0
+
+                bg-gradient-to-r
+                from-cyan-500/5
+                to-purple-500/5
+              "
+            />
+
+            <div className="relative z-10">
+
+              {/* TOP */}
+              <div
+                className="
+                  flex
+                  items-center
+                  justify-between
+
+                  mb-4
+                "
+              >
+
+                <div
+                  className="
+                    text-white/40
+                    text-sm
+                    uppercase
+                    tracking-widest
+                  "
+                >
+                  BO3 MATCH
+                </div>
+
+                <div
+                  className="
+                    px-3
+                    py-1
+
+                    rounded-full
+
+                    bg-cyan-400/10
+                    border
+                    border-cyan-400/20
+
+                    text-cyan-300
+                    text-xs
+                    font-bold
+                  "
+                >
+                  LIVE
+                </div>
+
+              </div>
+
+              {/* PLAYERS */}
+              <div className="space-y-3">
+
+                {/* PLAYER 1 */}
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
+
+                    rounded-2xl
+
+                    bg-black/20
+
+                    px-5
+                    py-4
+                  "
+                >
+
+                  <div
                     className="
-                      relative
-                      overflow-hidden
-
-                      rounded-2xl
-
-                      border
-                      border-cyan-400/20
-
-                      bg-gradient-to-br
-                      from-[#151d35]
-                      to-[#0b1120]
-
-                      p-4
-
-                      shadow-xl
+                      flex
+                      items-center
+                      gap-4
                     "
                   >
 
-                    {/* Glow */}
                     <div
                       className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-r
-                        from-purple-500/5
-                        to-cyan-500/5
+                        w-3
+                        h-3
+
+                        rounded-full
+                        bg-cyan-400
                       "
                     />
 
-                    <div className="relative z-10">
+                    <span
+                      className="
+                        text-lg
+                        font-semibold
+                      "
+                    >
+                      {match.player1}
+                    </span>
 
-                      {/* PLAYER 1 */}
-                      <div
-                        className="
-                          flex
-                          justify-between
-                          items-center
+                  </div>
 
-                          rounded-xl
+                  <div
+                    className="
+                      text-2xl
+                      font-black
+                      text-cyan-300
+                    "
+                  >
+                    {match.score1}
+                  </div>
 
-                          bg-black/20
+                </div>
 
-                          px-4
-                          py-3
-                        "
-                      >
+                {/* PLAYER 2 */}
+                <div
+                  className="
+                    flex
+                    items-center
+                    justify-between
 
-                        <span className="font-semibold">
-                          {match.player1}
-                        </span>
+                    rounded-2xl
 
-                        <span className="text-cyan-300">
-                          {match.score1}
-                        </span>
+                    bg-black/20
 
-                      </div>
+                    px-5
+                    py-4
+                  "
+                >
 
-                      {/* PLAYER 2 */}
-                      <div
-                        className="
-                          flex
-                          justify-between
-                          items-center
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-4
+                    "
+                  >
 
-                          rounded-xl
+                    <div
+                      className="
+                        w-3
+                        h-3
 
-                          bg-black/20
+                        rounded-full
+                        bg-purple-400
+                      "
+                    />
 
-                          px-4
-                          py-3
-                          mt-3
-                        "
-                      >
+                    <span
+                      className="
+                        text-lg
+                        font-semibold
+                      "
+                    >
+                      {match.player2}
+                    </span>
 
-                        <span className="font-semibold">
-                          {match.player2}
-                        </span>
+                  </div>
 
-                        <span className="text-cyan-300">
-                          {match.score2}
-                        </span>
+                  <div
+                    className="
+                      text-2xl
+                      font-black
+                      text-purple-300
+                    "
+                  >
+                    {match.score2}
+                  </div>
 
-                      </div>
-
-                    </div>
-
-                  </motion.div>
-                ))}
+                </div>
 
               </div>
+
+              {/* FOOTER */}
+              <div
+                className="
+                  mt-4
+                  pt-4
+
+                  border-t
+                  border-white/5
+
+                  flex
+                  items-center
+                  justify-between
+                "
+              >
+
+                <div className="text-white/40 text-sm">
+                  Winner:
+                  {' '}
+                  <span className="text-cyan-300">
+                    {match.winner || 'TBD'}
+                  </span>
+                </div>
+
+                <div className="text-white/30 text-sm">
+                  Monthly Cup
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
+        ))}
+
+      </div>
+
+    </div>
+  ))}
+
+</div>
 
             </div>
           ))}
