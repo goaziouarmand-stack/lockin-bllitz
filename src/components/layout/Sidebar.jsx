@@ -36,11 +36,11 @@ export default function Sidebar() {
       path: '/tournaments',
       icon: Swords,
     },
-    // {
-    //   name: 'Admin',
-    //   path: '/admin',
-    //   icon: Shield,
-    // },
+    {
+      name: 'Admin',
+      path: '/',
+      icon: Shield,
+    },
   ]
 
   return (
