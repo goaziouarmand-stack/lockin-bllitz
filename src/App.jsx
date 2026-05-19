@@ -56,16 +56,19 @@ export default function App() {
 
         <Sidebar />
 
-        <main
+<main
   className="
-    lg:ml-72
-    p-4
-    sm:p-6
-    lg:p-8
     relative
     z-10
-    backdrop-blur-[2px]
+
     min-h-screen
+
+    ml-0
+    lg:ml-[288px]
+
+    p-4
+    sm:p-6
+    lg:p-10
   "
 >
           <Routes>
