@@ -15,12 +15,9 @@ export default function App() {
     <BrowserRouter>
       <div
         className="
-          min-h-screen
-          bg-[radial-gradient(circle_at_top,#16213b_0%,#090d18_45%,#05070d_100%)]
-          text-white
-          overflow-hidden
-          relative
-        "
+            min-h-screen
+            bg-[radial-gradient(circle_at_top,#16213b_0%,#090d18_45%,#05070d_100%)]
+            text-slate-100"
       >
         {/* Background Effects */}
         <div className="absolute inset-0 overflow-hidden">

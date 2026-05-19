@@ -99,8 +99,9 @@ export default function Tournaments() {
             font-black
 
             bg-gradient-to-r
-            from-[#121a30]
-            to-[#0a0f1c]
+            from-cyan-300
+            via-slate-100
+            to-amber-300
 
             bg-clip-text
             text-transparent
@@ -125,7 +126,7 @@ export default function Tournaments() {
 
           rounded-3xl
           border
-          border-cyan-400/20
+          border-white/10
 
           bg-gradient-to-br
           from-[#151d35]
@@ -217,7 +218,7 @@ export default function Tournaments() {
 
     rounded-3xl
     border
-    border-cyan-400/10
+    border-white/10
 
     bg-[#0b1120]/80
     backdrop-blur-xl
@@ -240,7 +241,7 @@ export default function Tournaments() {
       <tr
         className="
           border-b
-          border-cyan-400/10
+          border-white/10
 
           bg-cyan-500/5
         "
@@ -300,7 +301,9 @@ export default function Tournaments() {
             border-b
             border-white/5
 
-            hover:bg-cyan-500/5
+            hover:bg-gradient-to-r
+            hover:from-cyan-500/5
+            hover:to-amber-500/5
 
             transition-all
           "
@@ -435,7 +438,7 @@ export default function Tournaments() {
 
                 bg-cyan-400/10
                 border
-                border-cyan-400/20
+                border-white/10
 
                 text-cyan-300
                 text-xs

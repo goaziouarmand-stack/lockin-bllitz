@@ -59,8 +59,10 @@ export default function Players() {
             text-6xl
             font-black
             bg-gradient-to-r
-            from-[#121a30]
-            to-[#0a0f1c]
+            from-cyan-300
+            via-slate-100
+            to-amber-300
+
             bg-clip-text
             text-transparent
           "
@@ -115,8 +117,8 @@ export default function Players() {
                 border-purple-500/20
 
                 bg-gradient-to-br
-                from-[#151d35]
-                to-[#0b1120]
+                from-[#121a30]
+                to-[#0a0f1c]
 
                 p-6
 
@@ -175,7 +177,7 @@ export default function Players() {
                         rounded-xl
                         bg-cyan-500/10
                         border
-                        border-cyan-400/20
+                        border-white/10
                         text-cyan-300
                         text-sm
                         font-semibold

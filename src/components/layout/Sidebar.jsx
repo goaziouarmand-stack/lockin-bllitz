@@ -98,6 +98,15 @@ export default function Sidebar() {
           transition-transform
           duration-300
 
+          relative
+          overflow-hidden
+
+          bg-[#0b1120]/80
+          backdrop-blur-xl
+
+          border-r
+          border-white/10
+
           ${
             open
               ? 'translate-x-0'
@@ -178,7 +187,19 @@ export default function Sidebar() {
           })}
 
         </nav>
+          <div
+            className="
+              absolute
+              inset-0
 
+              bg-gradient-to-b
+              from-cyan-500/5
+              via-transparent
+              to-amber-500/5
+
+              pointer-events-none
+            "
+          />
       </aside>
     </>
   )

@@ -20,8 +20,10 @@ export default function Home() {
             font-black
             leading-tight
             bg-gradient-to-r
-            from-[#121a30]
-            to-[#0a0f1c]
+            from-cyan-300
+            via-slate-100
+            to-amber-300
+
             bg-clip-text
             text-transparent
           "
