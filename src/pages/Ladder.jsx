@@ -10,14 +10,7 @@ export default function Ladder() {
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
   className="text-5xl 
-            font-bold             
-            bg-gradient-to-r
-            from-cyan-300
-            via-slate-100
-            to-amber-300
-
-            bg-clip-text
-            text-transparent"
+            font-bold             "
 >
   Lockin Blitz
 </motion.h1>
