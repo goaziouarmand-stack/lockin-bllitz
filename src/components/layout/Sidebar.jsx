@@ -79,7 +79,7 @@ export default function Sidebar() {
       {/* SIDEBAR */}
       <aside
         className={`
-          fixed
+          relative
           top-0
           left-0
 
@@ -120,6 +120,8 @@ export default function Sidebar() {
         {/* LOGO */}
 <div
   className="
+    relative
+    z-10
     flex
     items-center
     justify-center
@@ -147,7 +149,10 @@ export default function Sidebar() {
 </div>
 
         {/* LINKS */}
-        <nav className="px-4 space-y-2">
+        <nav className="relative
+            z-10
+            px-4 
+            space-y-2">
 
           {links.map((link) => {
             const Icon = link.icon
@@ -191,6 +196,7 @@ export default function Sidebar() {
             className="
               absolute
               inset-0
+              z-0
 
               bg-gradient-to-b
               from-cyan-500/5
