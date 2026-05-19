@@ -80,31 +80,23 @@ export default function Sidebar() {
       <aside
         className={`
           fixed
-          top-0
-          left-0
+    top-0
+    left-0
 
-          h-screen
-          w-72
+    h-screen
+    w-72
 
-          bg-[#0b1120]/95
+    bg-[#0b1120]/80
 
-          border-r
-          border-cyan-400/10
+    border-r
+    border-white/10
 
-          z-50
+    z-50
 
-          transform
-          transition-transform
-          duration-300
+    overflow-hidden
 
-          relative
-          overflow-hidden
-
-          bg-[#0b1120]/80
-          backdrop-blur-xl
-
-          border-r
-          border-white/10
+    transition-transform
+    duration-300
 
           ${
             open
