@@ -25,7 +25,7 @@ export default function Home() {
             to-amber-300
 
             bg-clip-text
-            text-transparent
+            text-white
           "
         >
           LOCKIN
