@@ -79,7 +79,7 @@ export default function Sidebar() {
       {/* SIDEBAR */}
       <aside
         className={`
-          relative
+          fixed
           top-0
           left-0
 
@@ -87,7 +87,6 @@ export default function Sidebar() {
           w-72
 
           bg-[#0b1120]/95
-          backdrop-blur-xl
 
           border-r
           border-cyan-400/10
