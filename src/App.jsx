@@ -16,7 +16,7 @@ export default function App() {
       <div
         className="
           min-h-screen
-          bg-[#070b17]
+          bg-[radial-gradient(circle_at_top,#16213b_0%,#090d18_45%,#05070d_100%)]
           text-white
           overflow-hidden
           relative

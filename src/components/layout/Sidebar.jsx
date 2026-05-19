@@ -36,11 +36,6 @@ export default function Sidebar() {
       path: '/tournaments',
       icon: Swords,
     },
-    {
-      name: 'Admin',
-      path: '/',
-      icon: Shield,
-    },
   ]
 
   return (
@@ -114,27 +109,33 @@ export default function Sidebar() {
       >
 
         {/* LOGO */}
-        <div className="p-8">
+<div
+  className="
+    flex
+    items-center
+    justify-center
 
-          <h1
-            className="
-              text-3xl
-              font-black
-              bg-gradient-to-r
-              from-purple-400
-              to-cyan-400
-              bg-clip-text
-              text-transparent
-            "
-          >
-            SW Ladder
-          </h1>
+    py-6
+  "
+>
 
-          <p className="text-white/50 mt-2 text-sm">
-            Monthly Tournament
-          </p>
+  <img
+    src="/lockinblitz-logo.png"
+    alt="LockIn Blitz"
 
-        </div>
+    className="
+      w-[220px]
+
+      drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]
+
+      hover:scale-105
+
+      transition-all
+      duration-500
+    "
+  />
+
+</div>
 
         {/* LINKS */}
         <nav className="px-4 space-y-2">
