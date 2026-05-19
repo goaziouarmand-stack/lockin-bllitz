@@ -64,7 +64,7 @@ export default function Players() {
             to-amber-300
 
             bg-clip-text
-            text-white
+            text-transparent
           "
         >
           JOUEURS
