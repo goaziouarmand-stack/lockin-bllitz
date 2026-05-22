@@ -58,4 +58,162 @@ export default function Home() {
         />
 
         <div className="relative z-10">
-                relative
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="
+      text-sm
+      uppercase
+      tracking-[0.35em]
+
+      text-cyan-300
+
+      mb-4
+    "
+  >
+    LIVE COMPETITIVE LADDER
+  </motion.p>
+
+  <motion.h1
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    className="
+      text-5xl
+      lg:text-7xl
+
+      font-black
+
+      leading-none
+
+      bg-gradient-to-r
+      from-cyan-300
+      via-white
+      to-amber-300
+
+      bg-clip-text
+      text-transparent
+    "
+  >
+    LOCKIN
+    <br />
+    BLITZ
+  </motion.h1>
+
+  <motion.p
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.3 }}
+    className="
+      mt-8
+
+      max-w-2xl
+
+      text-lg
+      leading-relaxed
+
+      text-slate-300
+    "
+  >
+    Retrouvez les résultats, le ladder et les tournois
+    mensuels de la scène compétitive LockIn Blitz.
+  </motion.p>
+
+  {/* BUTTONS */}
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.5 }}
+    className="flex flex-wrap gap-4 mt-10"
+  >
+    <button
+      className="
+        rounded-2xl
+
+        bg-gradient-to-r
+        from-cyan-500
+        to-blue-600
+
+        px-8
+        py-4
+
+        text-lg
+        font-bold
+
+        transition-all
+        duration-500
+
+        hover:scale-105
+        hover:from-cyan-400
+        hover:to-amber-400
+
+        shadow-[0_0_35px_rgba(34,211,238,0.25)]
+      "
+    >
+      View Ladder
+    </button>
+
+    <button
+      className="
+        rounded-2xl
+
+        border
+        border-white/10
+
+        bg-white/5
+
+        px-8
+        py-4
+
+        text-lg
+        font-bold
+
+        transition-all
+        duration-300
+
+        hover:bg-white/10
+      "
+    >
+      View Tournament
+    </button>
+  </motion.div>
+
+  {/* LIVE STATUS */}
+  <div
+    className="
+      mt-10
+
+      flex
+      w-fit
+      items-center
+      gap-3
+
+      rounded-2xl
+
+      border
+      border-red-500/20
+
+      bg-red-500/5
+
+      px-5
+      py-3
+    "
+  >
+    <div
+      className="
+        h-3
+        w-3
+
+        rounded-full
+        bg-red-500
+
+        animate-pulse
+      "
+    />
+
+    <span className="font-semibold text-red-300">
+      LIVE — Tournament in progress
+    </span>
+  </div>
+</div>
+</section>
