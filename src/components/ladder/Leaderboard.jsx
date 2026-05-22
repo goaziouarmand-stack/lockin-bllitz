@@ -106,26 +106,30 @@ export default function Leaderboard() {
           {/* Left */}
           <div className="flex items-center gap-4 z-10">
             <AnimatedAvatar
-                username={player.username}
-                rank={index + 1}
+              username={player.username}
+              rank={index + 1}
             />
 
             <Link to={`/players/${player.username}`}>
+              <div className="flex items-center gap-2 mb-1">
+                <span
+                  className="
+                    px-2
+                    py-1
+                    rounded-lg
+                    text-xs
+                    font-bold
+                    bg-cyan-500/20
+                    text-cyan-300
+                    border
+                    border-cyan-400/20
+                  "
+                >
+                  Rank #{index + 1}
+                </span>
+              </div>
+
               <h2 className="text-2xl font-semibold">
-              <div className="flex items-center gap-2 mt-1">
-              <div className="px-2 py-1
-      rounded-lg
-      text-xs
-      font-bold
-      bg-cyan-500/20
-      text-cyan-300
-      border
-      border-cyan-400/20
-    "
-  >
-    Rank #{index + 1}
-  </div>
-</div>
                 {player.username}
               </h2>
 
