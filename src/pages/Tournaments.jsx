@@ -104,14 +104,14 @@ export default function Tournaments() {
             to-amber-300
 
             bg-clip-text
-            text-white
+            text-transparent
           "
         >
-          TOURNAMENT
+          TOURNOIS
         </motion.h1>
 
         <p className="text-white/60 mt-3 text-lg">
-          Monthly Summoners War Clash
+          Blitz Mensuelle
         </p>
 
       </div>

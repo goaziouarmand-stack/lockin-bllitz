@@ -16,7 +16,7 @@ export default function Ladder() {
 </motion.h1>
 
         <p className="text-white/70 mt-2">
-          Classement mensuel Summoners War
+          Classement de guilde
         </p>
       </div>
 

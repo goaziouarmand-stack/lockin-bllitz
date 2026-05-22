@@ -1,103 +1,61 @@
 import { motion } from 'framer-motion'
 
 export default function Home() {
+  const topPlayers = [
+    {
+      name: 'Mamen',
+      elo: 1542,
+      rank: '#1',
+    },
+    {
+      name: 'Light',
+      elo: 1498,
+      rank: '#2',
+    },
+    {
+      name: 'Kinaya',
+      elo: 1461,
+      rank: '#3',
+    },
+  ]
+
   return (
-    <div
-      className="
-        min-h-[85vh]
-        flex
-        items-center
-      "
-    >
-      <div className="max-w-4xl">
+    <div className="space-y-10">
+      {/* HERO */}
+      <section
+        className="
+          relative
+          overflow-hidden
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          rounded-[32px]
+
+          border
+          border-white/10
+
+          bg-gradient-to-br
+          from-[#121a30]
+          via-[#0b1120]
+          to-[#070b14]
+
+          p-8
+          lg:p-12
+
+          shadow-[0_0_80px_rgba(34,211,238,0.08)]
+        "
+      >
+        {/* GLOW */}
+        <div
           className="
-            text-7xl
-            font-black
-            leading-tight
-            bg-gradient-to-r
-            from-cyan-300
-            via-slate-100
-            to-amber-300
+            absolute
+            inset-0
 
-            bg-clip-text
-            text-white
+            opacity-40
+
+            bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_40%)]
+
+            animate-pulse
           "
-        >
-          LOCKIN
-          <br />
-          BLITZ
-        </motion.h1>
+        />
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.3,
-          }}
-          className="
-            mt-8
-            text-xl
-            text-white/70
-            max-w-2xl
-            leading-relaxed
-          "
-        >
-          Retrouvez les résultats et le classements des tournois Blitz de Lockin.
-          <br /><br />
-          Matchs BO3, tournois mensuels, ELO dynamique,
-          classements et affrontements spéctaculaires.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 0.6,
-          }}
-          className="flex gap-4 mt-10"
-        >
-          <button
-            className="
-              px-8
-              py-4
-              rounded-2xl
-              bg-purple-500
-              hover:bg-purple-400
-              transition-all
-              text-lg
-              font-bold
-              shadow-xl
-              shadow-purple-500/30
-            "
-          >
-            Voir le Ladder
-          </button>
-
-          <button
-            className="
-              px-8
-              py-4
-              rounded-2xl
-              border
-              border-cyan-400/30
-              bg-white/5
-              hover:bg-white/10
-              transition-all
-              text-lg
-              font-bold
-            "
-          >
-            Tournois
-          </button>
-        </motion.div>
-
-      </div>
-    </div>
-  )
-}
+        <div className="relative z-10">
+                relative
