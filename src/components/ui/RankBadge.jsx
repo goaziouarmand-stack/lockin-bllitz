@@ -10,44 +10,39 @@ export default function RankBadge({ elo, size = 'md' }) {
   }
 
   return (
-    <span
-      className={`
-        inline-flex items-center font-bold rounded-xl
-        border ${rank.border} ${rank.bg} ${rank.text}
-        ${sizes[size]}
-      `}
-    >
-      <div
-  className="
-    flex
-    items-center
-    justify-center
+  <span
+    className={`
+      inline-flex
+      items-center
+      gap-2
 
-    w-28
-    h-28
+      font-bold
+      rounded-xl
 
-    flex-shrink-0
-  "
->
-  <img
-    src={rank.icon}
-    alt={rank.name}
-    className="
-      w-full
-      h-full
+      border
+      ${rank.border}
+      ${rank.bg}
+      ${rank.text}
 
-      object-contain
+      ${sizes[size]}
+    `}
+  >
+    <img
+      src={rank.icon}
+      alt={rank.name}
+      className="
+        w-8
+        h-8
 
-      drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]
+        object-contain
 
-      transition-all
-      duration-300
+        flex-shrink-0
 
-      hover:scale-105
-    "
-  />
-</div>
-      {rank.name}
-    </span>
-  )
+        drop-shadow-[0_0_10px_rgba(34,211,238,0.25)]
+      "
+    />
+
+    <span>{rank.name}</span>
+  </span>
+)
 }
