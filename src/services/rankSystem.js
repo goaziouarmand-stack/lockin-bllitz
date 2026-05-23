@@ -17,7 +17,7 @@ export const RANKS = [
     bg: 'bg-yellow-500/10',
     text: 'text-yellow-300',
     glow: 'shadow-yellow-500/20',
-    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-challenger.png',
+    icon: 'https://ddatdqfjmerjmigmmefo.supabase.co/storage/v1/object/public/ranks/icon_guardian.png',
   },
   {
     name: 'Conqueror',
@@ -27,7 +27,7 @@ export const RANKS = [
     bg: 'bg-purple-500/10',
     text: 'text-purple-300',
     glow: 'shadow-purple-500/20',
-    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-platinum.png',
+    icon: 'https://ddatdqfjmerjmigmmefo.supabase.co/storage/v1/object/public/ranks/icon_conqueror.png',
   },
   {
     name: 'Challenger',
@@ -37,7 +37,7 @@ export const RANKS = [
     bg: 'bg-cyan-500/10',
     text: 'text-cyan-300',
     glow: 'shadow-cyan-500/20',
-    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-silver.png',
+    icon: 'https://ddatdqfjmerjmigmmefo.supabase.co/storage/v1/object/public/ranks/icon_challenger.png',
   },
   {
     name: 'Fighter',
