@@ -179,9 +179,9 @@ export default function Home() {
                 animate-pulse
               "
             />
-            {/*<span className="font-semibold text-red-300">
-              LIVE — Tournois en cours
-            </span>*/}
+            <span className="font-semibold text-red-300">
+              LIVE — Tournois en cours 
+            </span>
           </div>
         </div>
       </section>
