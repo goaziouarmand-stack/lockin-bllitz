@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const topPlayers = [
@@ -109,44 +110,48 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="flex flex-wrap gap-4 mt-10"
           >
-            <button
-              className="
-                rounded-2xl
-                bg-gradient-to-r
-                from-cyan-500
-                to-blue-600
-                px-8
-                py-4
-                text-lg
-                font-bold
-                transition-all
-                duration-500
-                hover:scale-105
-                hover:from-cyan-400
-                hover:to-amber-400
-                shadow-[0_0_35px_rgba(34,211,238,0.25)]
-              "
-            >
-              View Ladder
-            </button>
+            <Link to="/ladder">
+              <button
+                className="
+                  rounded-2xl
+                  bg-gradient-to-r
+                  from-cyan-500
+                  to-blue-600
+                  px-8
+                  py-4
+                  text-lg
+                  font-bold
+                  transition-all
+                  duration-500
+                  hover:scale-105
+                  hover:from-cyan-400
+                  hover:to-amber-400
+                  shadow-[0_0_35px_rgba(34,211,238,0.25)]
+                "
+              >
+                View Ladder
+              </button>
+            </Link>
 
-            <button
-              className="
-                rounded-2xl
-                border
-                border-white/10
-                bg-white/5
-                px-8
-                py-4
-                text-lg
-                font-bold
-                transition-all
-                duration-300
-                hover:bg-white/10
-              "
-            >
-              View Tournament
-            </button>
+            <Link to="/tournaments">
+              <button
+                className="
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  px-8
+                  py-4
+                  text-lg
+                  font-bold
+                  transition-all
+                  duration-300
+                  hover:bg-white/10
+                "
+              >
+                View Tournament
+              </button>
+            </Link>
           </motion.div>
 
           {/* LIVE STATUS */}

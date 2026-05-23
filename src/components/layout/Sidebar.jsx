@@ -9,10 +9,11 @@ import {
   Swords,
 } from 'lucide-react'
 
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
 
   const links = [
     {
@@ -36,6 +37,71 @@ export default function Sidebar() {
       icon: Swords,
     },
   ]
+
+  const SidebarContent = () => (
+    <div
+      className="
+        flex
+        flex-col
+        h-full
+        p-6
+        gap-2
+      "
+    >
+      {/* LOGO */}
+      <div className="mb-8">
+        <h1
+          className="
+            text-2xl
+            font-black
+            bg-gradient-to-r
+            from-cyan-300
+            to-amber-300
+            bg-clip-text
+            text-transparent
+          "
+        >
+          LOCKIN BLITZ
+        </h1>
+        <p className="text-white/40 text-xs mt-1 uppercase tracking-widest">
+          Competitive Ladder
+        </p>
+      </div>
+
+      {/* LINKS */}
+      {links.map((link) => {
+        const Icon = link.icon
+        const isActive = location.pathname === link.path
+
+        return (
+          <Link
+            key={link.path}
+            to={link.path}
+            onClick={() => setOpen(false)}
+            className={`
+              flex
+              items-center
+              gap-4
+              px-4
+              py-3
+              rounded-2xl
+              font-semibold
+              transition-all
+              duration-300
+              ${
+                isActive
+                  ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+                  : 'text-white/50 hover:text-white hover:bg-white/5'
+              }
+            `}
+          >
+            <Icon size={20} />
+            {link.name}
+          </Link>
+        )
+      })}
+    </div>
+  )
 
   return (
     <>
@@ -77,6 +143,52 @@ export default function Sidebar() {
           "
         />
       )}
+
+      {/* MOBILE DRAWER */}
+      {open && (
+        <aside
+          className="
+            fixed
+            top-0
+            left-0
+            z-50
+            h-full
+            w-72
+
+            lg:hidden
+
+            border-r
+            border-white/10
+            bg-[#0b1120]
+          "
+        >
+          <SidebarContent />
+        </aside>
+      )}
+
+      {/* DESKTOP SIDEBAR */}
+      <aside
+        className="
+          hidden
+          lg:flex
+          lg:flex-col
+
+          fixed
+          top-0
+          left-0
+
+          h-full
+          w-72
+
+          border-r
+          border-white/10
+          bg-[#0b1120]
+
+          z-50
+        "
+      >
+        <SidebarContent />
+      </aside>
     </>
   )
-}  
+}
