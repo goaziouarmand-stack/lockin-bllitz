@@ -3,15 +3,17 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 
 function useCountdown(targetDate) {
-  const [diff, setDiff] = useState(() =>
-    targetDate ? new Date(targetDate).getTime() - Date.now() : 0
-  )
+  const [diff, setDiff] = useState(0)
 
   useEffect(() => {
     if (!targetDate) return
-    const id = setInterval(() => {
+
+    function tick() {
       setDiff(new Date(targetDate).getTime() - Date.now())
-    }, 60_000)
+    }
+
+    tick()                            // ← calcul immédiat
+    const id = setInterval(tick, 1_000) // ← toutes les secondes
     return () => clearInterval(id)
   }, [targetDate])
 
@@ -19,6 +21,7 @@ function useCountdown(targetDate) {
     days:  Math.max(Math.floor(diff / (1000 * 60 * 60 * 24)), 0),
     hours: Math.max(Math.floor((diff / (1000 * 60 * 60)) % 24), 0),
     mins:  Math.max(Math.floor((diff / (1000 * 60)) % 60), 0),
+    secs:  Math.max(Math.floor((diff / 1000) % 60), 0), // ← secondes bonus
   }
 }
 
@@ -97,6 +100,7 @@ export default function Tournaments() {
               { value: days,  label: 'Jours'  },
               { value: hours, label: 'Heures' },
               { value: mins,  label: 'Min'    },
+              { value: secs,  label: 'Sec'  },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <div className="text-5xl sm:text-6xl font-black text-cyan-400 tabular-nums">
