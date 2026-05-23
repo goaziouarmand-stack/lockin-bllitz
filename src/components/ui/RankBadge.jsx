@@ -17,16 +17,16 @@ export default function RankBadge({ elo, size = 'md' }) {
         ${sizes[size]}
       `}
     >
-<div
+      <div
   className="
     flex
     items-center
     justify-center
 
-    w-20
-    h-20
+    w-28
+    h-28
 
-    overflow-hidden
+    flex-shrink-0
   "
 >
   <img
@@ -38,9 +38,12 @@ export default function RankBadge({ elo, size = 'md' }) {
 
       object-contain
 
-      scale-[2.2]
+      drop-shadow-[0_0_25px_rgba(34,211,238,0.35)]
 
-      drop-shadow-[0_0_20px_rgba(251,191,36,0.35)]
+      transition-all
+      duration-300
+
+      hover:scale-105
     "
   />
 </div>

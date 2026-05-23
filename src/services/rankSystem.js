@@ -7,7 +7,7 @@ export const RANKS = [
     bg: 'bg-red-500/10',
     text: 'text-red-300',
     glow: 'shadow-red-500/20',
-    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-grandmaster.png',
+    icon: 'https://ddatdqfjmerjmigmmefo.supabase.co/storage/v1/object/public/ranks/icon_guardian.png',
   },
   {
     name: 'Guardian',
