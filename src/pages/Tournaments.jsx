@@ -49,7 +49,7 @@ export default function Tournaments() {
     setMatches(matchData || [])
   }
 
-  const { days, hours, mins } = useCountdown(tournament?.tournament_date)
+  const { days, hours, mins, secs } = useCountdown(tournament?.tournament_date)
 
   const dateLabel = tournament?.tournament_date
     ? new Date(tournament.tournament_date).toLocaleDateString('fr-FR', {
