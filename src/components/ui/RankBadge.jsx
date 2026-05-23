@@ -17,7 +17,17 @@ export default function RankBadge({ elo, size = 'md' }) {
         ${sizes[size]}
       `}
     >
-      <span className="font-black">{rank.icon}</span>
+      <img
+  src={rank.icon}
+  alt={rank.name}
+  className="
+    h-14
+    w-14
+    object-contain
+
+    drop-shadow-[0_0_15px_rgba(255,215,0,0.35)]
+  "
+/>
       {rank.name}
     </span>
   )

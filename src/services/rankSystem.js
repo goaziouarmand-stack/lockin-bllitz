@@ -7,7 +7,7 @@ export const RANKS = [
     bg: 'bg-red-500/10',
     text: 'text-red-300',
     glow: 'shadow-red-500/20',
-    icon: 'T',
+    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-grandmaster.png',
   },
   {
     name: 'Guardian',
@@ -17,7 +17,7 @@ export const RANKS = [
     bg: 'bg-yellow-500/10',
     text: 'text-yellow-300',
     glow: 'shadow-yellow-500/20',
-    icon: 'G',
+    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-challenger.png',
   },
   {
     name: 'Conqueror',
@@ -27,7 +27,7 @@ export const RANKS = [
     bg: 'bg-purple-500/10',
     text: 'text-purple-300',
     glow: 'shadow-purple-500/20',
-    icon: 'C',
+    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-platinum.png',
   },
   {
     name: 'Fighter',
@@ -37,7 +37,7 @@ export const RANKS = [
     bg: 'bg-cyan-500/10',
     text: 'text-cyan-300',
     glow: 'shadow-cyan-500/20',
-    icon: 'F',
+    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-silver.png',
   },
   {
     name: 'Challenger',
@@ -47,7 +47,7 @@ export const RANKS = [
     bg: 'bg-slate-500/10',
     text: 'text-slate-300',
     glow: 'shadow-slate-500/10',
-    icon: 'Ch',
+    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-bronze.png',
   },
 ]
 
