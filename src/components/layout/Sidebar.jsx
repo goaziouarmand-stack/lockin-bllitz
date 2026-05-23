@@ -64,7 +64,7 @@ export default function Sidebar() {
           LOCKIN BLITZ
         </h1>
         <p className="text-white/40 text-xs mt-1 uppercase tracking-widest">
-          Competitive Ladder
+          Guild Tournament
         </p>
       </div>
 

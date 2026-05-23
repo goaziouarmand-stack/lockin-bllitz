@@ -62,7 +62,7 @@ export default function Home() {
               mb-4
             "
           >
-            LIVE COMPETITIVE LADDER
+            COMPETITION OFFICIELLE 
           </motion.p>
 
           <motion.h1
@@ -100,7 +100,7 @@ export default function Home() {
             "
           >
             Retrouvez les résultats, le ladder et les tournois
-            mensuels de la scène compétitive LockIn Blitz.
+            mensuels de la scène compétitive summoners war.
           </motion.p>
 
           {/* BUTTONS */}
@@ -129,7 +129,7 @@ export default function Home() {
                   shadow-[0_0_35px_rgba(34,211,238,0.25)]
                 "
               >
-                View Ladder
+                Voir Ladder
               </button>
             </Link>
 
@@ -149,7 +149,7 @@ export default function Home() {
                   hover:bg-white/10
                 "
               >
-                View Tournament
+                Voir Tournois
               </button>
             </Link>
           </motion.div>
@@ -179,9 +179,9 @@ export default function Home() {
                 animate-pulse
               "
             />
-            <span className="font-semibold text-red-300">
-              LIVE — Tournament in progress
-            </span>
+            {/*<span className="font-semibold text-red-300">
+              LIVE — Tournois en cours
+            </span>*/}
           </div>
         </div>
       </section>

@@ -149,7 +149,7 @@ export default function Tournaments() {
         <div className="relative z-10">
 
           <div className="text-white/50 text-sm">
-            NEXT TOURNAMENT
+            PROCHAIN TOURNOIS
           </div>
 
           <div
@@ -167,7 +167,7 @@ export default function Tournaments() {
           </div>
 
           <div className="mt-4 text-white/70">
-            June 15 • 20:00 CET
+            24 Mai • 18:00 CET
           </div>
 
         </div>

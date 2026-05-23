@@ -71,7 +71,7 @@ export default function Players() {
         </motion.h1>
 
         <p className="text-white/60 mt-3 text-lg">
-          Classement des joueurs du ladder mensuel
+          Liste complète des joueurs du ladder Lockin
         </p>
       </div>
 

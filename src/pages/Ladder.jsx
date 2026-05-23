@@ -9,8 +9,13 @@ export default function Ladder() {
   initial={{ opacity: 0, y: -20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6 }}
-  className="text-5xl 
-            font-bold             "
+  className="text-2xl
+            font-black
+            bg-gradient-to-r
+            from-cyan-300
+            to-amber-300
+            bg-clip-text
+            text-transparent            "
 >
   Lockin Blitz
 </motion.h1>
