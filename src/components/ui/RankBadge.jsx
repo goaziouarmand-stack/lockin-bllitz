@@ -17,7 +17,7 @@ export default function RankBadge({ elo, size = 'md' }) {
         ${sizes[size]}
       `}
     >
-      <span>{rank.badge}</span>
+      <span className="font-black">{rank.icon}</span>
       {rank.name}
     </span>
   )
