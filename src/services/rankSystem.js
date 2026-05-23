@@ -30,7 +30,7 @@ export const RANKS = [
     icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-platinum.png',
   },
   {
-    name: 'Fighter',
+    name: 'Challenger',
     minElo: 1100,
     color: 'from-cyan-400 to-blue-500',
     border: 'border-cyan-400/40',
@@ -40,14 +40,14 @@ export const RANKS = [
     icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-silver.png',
   },
   {
-    name: 'Challenger',
+    name: 'Fighter',
     minElo: 0,
     color: 'from-slate-400 to-slate-600',
     border: 'border-slate-400/30',
     bg: 'bg-slate-500/10',
     text: 'text-slate-300',
     glow: 'shadow-slate-500/10',
-    icon: 'https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/emblem-bronze.png',
+    icon: 'https://ddatdqfjmerjmigmmefo.supabase.co/storage/v1/object/public/ranks/icon_fighter.png',
   },
 ]
 
