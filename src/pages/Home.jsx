@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import MatchFeed from '../components/home/MatchFeed'
+import Cup from '../components/home/Cup'
 
 export default function Home() {
   return (
@@ -87,6 +88,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+    {/* IMG CUP */}
+      <Cup />
 
       {/* MATCH FEED */}
       <MatchFeed />
