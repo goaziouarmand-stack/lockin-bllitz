@@ -7,6 +7,7 @@ import Ladder from './pages/Ladder'
 import Players from './pages/Players'
 import Tournaments from './pages/Tournaments'
 import PlayerProfile from './pages/PlayerProfile'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Route path="/players"           element={<Players />}       />
           <Route path="/players/:username" element={<PlayerProfile />} />
           <Route path="/tournaments"       element={<Tournaments />}   />
+          <Route path="/admin"             element={<Admin />}         />
         </Routes>
       </main>
     </div>
