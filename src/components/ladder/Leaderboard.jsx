@@ -5,6 +5,36 @@ import AnimatedAvatar from '../ui/AnimatedAvatar'
 import RankBadge from '../ui/RankBadge'
 import { Link } from 'react-router-dom'
 
+function BadgeList({ badges }) {
+  if (!badges?.length) return null
+  return (
+    <div className="flex flex-wrap gap-1.5 mt-2">
+      {badges.map((badge, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.15, y: -2 }}
+          title={badge.name}
+          className="
+            flex items-center gap-1
+            px-2 py-1 rounded-lg
+            border border-amber-400/20
+            bg-amber-500/8
+          "
+        >
+          <img
+            src={badge.icon}
+            alt={badge.name}
+            className="w-4 h-4 object-contain"
+          />
+          <span className="text-[11px] font-bold text-amber-300 tracking-wide leading-none">
+            {badge.name}
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  )
+}
+
 export default function Leaderboard() {
   const [players, setPlayers] = useState([])
 
@@ -68,6 +98,10 @@ export default function Leaderboard() {
               <p className="text-sm text-gray-400 mt-0.5">
                 {player.wins}V • {player.losses}D
               </p>
+
+              {/* ── BADGES ── */}
+              <BadgeList badges={player.badges} />
+
             </Link>
           </div>
 

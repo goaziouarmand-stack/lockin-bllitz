@@ -94,6 +94,43 @@ function StatCard({ label, value, sub, accent }) {
   )
 }
 
+// ─── Badge Strip ─────────────────────────────────────────────────
+function BadgeStrip({ badges }) {
+  if (!badges?.length) return null
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4 }}
+      className="flex flex-wrap items-center justify-center gap-2 mt-3"
+    >
+      {badges.map((badge, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.12, y: -2 }}
+          title={badge.name}
+          className="
+            flex items-center gap-1.5
+            px-3 py-1.5 rounded-xl
+            border border-amber-400/20
+            bg-amber-500/8
+            backdrop-blur-sm
+          "
+        >
+          <img
+            src={badge.icon}
+            alt={badge.name}
+            className="w-5 h-5 object-contain"
+          />
+          <span className="text-xs font-bold text-amber-300 tracking-wide">
+            {badge.name}
+          </span>
+        </motion.div>
+      ))}
+    </motion.div>
+  )
+}
+
 // ─── Match Row ───────────────────────────────────────────────────
 function MatchRow({ match, username }) {
   const victory = match.winner === username
@@ -111,7 +148,6 @@ function MatchRow({ match, username }) {
           : 'bg-red-500/8 border-red-400/15 hover:border-red-400/30'}
       `}
     >
-      {/* Result badge */}
       <div className={`
         w-16 text-center text-xs font-black uppercase tracking-wider
         px-2 py-1 rounded-lg shrink-0
@@ -120,7 +156,6 @@ function MatchRow({ match, username }) {
         {victory ? 'WIN' : 'LOSS'}
       </div>
 
-      {/* vs */}
       <div className="flex-1 px-4">
         <div className="font-semibold text-white">
           vs <span className="text-white/80">{opponent}</span>
@@ -133,7 +168,6 @@ function MatchRow({ match, username }) {
         </div>
       </div>
 
-      {/* ELO */}
       <div className={`text-right font-black shrink-0 ${victory ? 'text-green-400' : 'text-red-400'}`}>
         {victory ? '+' : '-'}{Math.abs(match.elo_gain)}
         <div className="text-white/30 text-xs font-normal">ELO</div>
@@ -200,7 +234,6 @@ export default function PlayerProfile() {
         animate={{ opacity: 1, y: 0 }}
         className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#131b32] to-[#090e1c] p-8 lg:p-10"
       >
-        {/* Animated background glow */}
         <motion.div
           animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
           transition={{ duration: 6, repeat: Infinity }}
@@ -214,7 +247,7 @@ export default function PlayerProfile() {
 
         <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-8">
 
-          {/* Avatar + name */}
+          {/* Avatar + name + badges */}
           <div className="flex flex-col items-center gap-4">
             <AnimatedAvatar username={player.username} rank={1} size="xl" />
             <div className="text-center">
@@ -231,20 +264,23 @@ export default function PlayerProfile() {
                   {player.elo} ELO
                 </motion.span>
               </div>
+
+              {/* ── BADGES ── */}
+              <BadgeStrip badges={player.badges} />
+
             </div>
           </div>
 
           {/* Stats grid */}
           <div className="flex-1 w-full space-y-4">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <StatCard label="Victoires"  value={player.wins}               accent="text-green-400" />
-              <StatCard label="Défaites"   value={player.losses}             accent="text-red-400"   />
+              <StatCard label="Victoires"  value={player.wins}                 accent="text-green-400" />
+              <StatCard label="Défaites"   value={player.losses}               accent="text-red-400"   />
               <StatCard label="Tournois"   value={player.tournaments_won ?? 0} accent="text-amber-400" />
-              <StatCard label="Streak"     value={streak.label}              accent={streak.color}
+              <StatCard label="Streak"     value={streak.label}                accent={streak.color}
                         sub={streak.count > 0 ? `${streak.count} de suite` : ''} />
             </div>
 
-            {/* Winrate + monsters */}
             <div className="flex flex-wrap items-center gap-6 bg-black/20 border border-white/5 rounded-2xl p-5">
               <WinrateRing winrate={winrate} />
               {monsters.length > 0 && (
@@ -257,7 +293,6 @@ export default function PlayerProfile() {
               )}
             </div>
 
-            {/* Rank progress */}
             <RankProgress elo={player.elo} />
           </div>
         </div>
@@ -266,8 +301,8 @@ export default function PlayerProfile() {
       {/* ── TABS ── */}
       <div className="flex gap-2 bg-white/5 border border-white/10 rounded-2xl p-1.5 w-fit">
         {[
-          { id: 'overview',  label: 'Apercu'      },
-          { id: 'matches',   label: 'Matchs'      },
+          { id: 'overview', label: 'Apercu' },
+          { id: 'matches',  label: 'Matchs' },
         ].map(t => (
           <button
             key={t.id}
@@ -294,10 +329,8 @@ export default function PlayerProfile() {
             exit={{ opacity: 0, y: -10 }}
             className="space-y-6"
           >
-            {/* ELO Chart */}
             <EloChart username={player.username} currentElo={player.elo} />
 
-            {/* Last 5 matches preview */}
             {matches.length > 0 && (
               <div className="rounded-3xl border border-white/10 bg-[#0d1325] p-6 space-y-4">
                 <div className="flex items-center justify-between">
