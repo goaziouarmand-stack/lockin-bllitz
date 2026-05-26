@@ -1,9 +1,30 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useRef } from 'react'
 import MatchFeed from '../components/home/MatchFeed'
 import Cup from '../components/home/Cup'
 
 export default function Home() {
+  const navigate    = useNavigate()
+  const clickCount  = useRef(0)
+  const clickTimer  = useRef(null)
+
+  function handleTitleClick() {
+    clickCount.current += 1
+
+    clearTimeout(clickTimer.current)
+
+    if (clickCount.current >= 3) {
+      clickCount.current = 0
+      navigate('/admin')
+      return
+    }
+
+    clickTimer.current = setTimeout(() => {
+      clickCount.current = 0
+    }, 600)
+  }
+
   return (
     <div className="space-y-10">
       {/* HERO */}
@@ -17,7 +38,6 @@ export default function Home() {
         "
       >
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_40%)] animate-pulse" />
-
         <div className="relative z-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -27,14 +47,17 @@ export default function Home() {
             COMPETITION OFFICIELLE
           </motion.p>
 
+          {/* Triple-clic secret → /admin */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            onClick={handleTitleClick}
             className="
               text-5xl lg:text-7xl font-black leading-none
               bg-gradient-to-r from-cyan-300 via-white to-amber-300
               bg-clip-text text-transparent
+              select-none cursor-default
             "
           >
             LOCKIN
@@ -51,7 +74,6 @@ export default function Home() {
             Retrouvez les résultats, le ladder et les tournois
             mensuels de la scène compétitive summoners war.
           </motion.p>
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -68,7 +90,6 @@ export default function Home() {
                 Voir Ladder
               </button>
             </Link>
-
             <Link to="/tournaments">
               <button className="
                 rounded-2xl border border-white/10 bg-white/5
@@ -79,7 +100,6 @@ export default function Home() {
               </button>
             </Link>
           </motion.div>
-
           <div className="mt-10 flex w-fit items-center gap-3 rounded-2xl border border-red-500/20 bg-red-500/5 px-5 py-3">
             <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse" />
             <span className="font-semibold text-red-300">
@@ -89,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-    {/* IMG CUP */}
+      {/* IMG CUP */}
       <Cup />
 
       {/* MATCH FEED */}
